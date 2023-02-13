@@ -6,11 +6,11 @@
 /*   By: daboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:50:51 by daboyer           #+#    #+#             */
-/*   Updated: 2023/02/02 12:15:45 by daboyer          ###   ########.fr       */
+/*   Updated: 2023/02/13 13:41:49 by daboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {
