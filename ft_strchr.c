@@ -3,31 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daboyer <daboyer@student.42perpignan.fr    +#+  +:+       +#+        */
+/*   By: daboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/06 21:27:02 by daboyer           #+#    #+#             */
-/*   Updated: 2022/12/06 21:49:24 by daboyer          ###   ########.fr       */
+/*   Created: 2023/02/13 10:32:36 by daboyer           #+#    #+#             */
+/*   Updated: 2023/02/13 10:33:51 by daboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strchr(const char *string, int searchedChar)
+char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-
-	i = -1;
-	if (searchedChar == 0)
-		return ((char *)string + ft_strlen(((char *)string)));
-	while (((char *)string)[++i])
-		if (((char *)string)[i] == (char) searchedChar)
-			return (((char *)string) + i);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *)s);
 	return (0);
 }
-
-// #include <stdio.h>
-
-// int		main(void)
-// {
-// 	printf("%s", ft_strchr("Je suis beau", 'a'));
-// }
