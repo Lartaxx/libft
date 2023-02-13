@@ -6,21 +6,11 @@
 /*   By: daboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 17:50:51 by daboyer           #+#    #+#             */
-/*   Updated: 2023/02/13 13:41:49 by daboyer          ###   ########.fr       */
+/*   Updated: 2023/02/13 13:42:55 by daboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 char	*ft_strdup(const char *src)
 {
