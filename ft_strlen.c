@@ -6,13 +6,13 @@
 /*   By: daboyer <daboyer@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 21:04:10 by daboyer           #+#    #+#             */
-/*   Updated: 2023/02/03 11:19:50 by daboyer          ###   ########.fr       */
+/*   Updated: 2023/02/13 14:32:49 by daboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t		i;
 
