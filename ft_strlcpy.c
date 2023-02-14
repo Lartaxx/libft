@@ -6,7 +6,7 @@
 /*   By: daboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 14:54:04 by daboyer           #+#    #+#             */
-/*   Updated: 2023/02/13 14:36:00 by daboyer          ###   ########.fr       */
+/*   Updated: 2023/02/14 13:28:09 by daboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		i++;
 	return (i);
 }
-
