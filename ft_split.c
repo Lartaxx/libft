@@ -6,49 +6,68 @@
 /*   By: daboyer <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 16:03:04 by daboyer           #+#    #+#             */
-/*   Updated: 2023/02/17 16:13:34 by daboyer          ###   ########.fr       */
+/*   Updated: 2023/02/17 16:23:37 by daboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countwords(char *str, char c)
+static char	*ft_words(const char *str, int start, int end)
 {
-	int	i;
-	int	words;
+	int		i;
+	char	*cp;
 
 	i = 0;
-	words = 0;
-	while (s[i] != '\0')
+	cp = (char *) malloc(((end - start) + 1) * sizeof(char));
+	while (start < end)
+		cp[i++] = str[start++];
+	cp[i] = 0;
+	return (cp);
+}
+
+static int	ft_count(const char *str, char sep)
+{
+	int	i;
+	int	start;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
 	{
-		if (s[i] != c)
-			words++;
-		while (s[i] != c && s[i + 1] != '\0')
+		while (str[i] == sep && str[i])
 			i++;
-	i++;
+		start = i;
+		while (str[i] != sep && str[i])
+			i++;
+		if (start != i)
+			count++;
 	}
-	return (words);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int	j;
-	int	k;
-	char	*tab;
+	char	**tab;
+	int		i;
+	int		start;
+	int		j;
 
-	tab = (char *)malloc((ft_countwords(s,c) + 1) * sizeof(char *));
+	i = 0;
+	j = 0;
+	tab = (char **) malloc((ft_count(s, c) + 1) * sizeof(char *));
 	if (!tab)
-		return (NULL);
-	while (s[i] != '\0')
+		return (0);
+	while (s[i])
 	{
-		if (s[i] == c)
-			tab[k++] = ft_substr(s, j, i - j);
-		while (s[i] == c)
+		while (s[i] == c && s[i])
 			i++;
-		j = i;
-	i++;
+		start = i;
+		while (s[i] != c && s[i])
+			i++;
+		if (start != i)
+			tab[j++] = ft_words(s, start, i);
 	}
-	tab[k] = NULL;
+	tab[j] = 0;
 	return (tab);
 }
