@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daboyer <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: daboyer <daboyer@student.42perpignan.fr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 17:05:34 by daboyer           #+#    #+#             */
-/*   Updated: 2023/02/17 17:06:54 by daboyer          ###   ########.fr       */
+/*   Created: 2023/02/17 21:58:33 by daboyer           #+#    #+#             */
+/*   Updated: 2023/02/17 21:58:35 by daboyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	i;
+	unsigned int	i;
 
 	i = -1;
 	while (s[++i])
-		write(fd, &s[i], 1);
-	write(fd, "\n", 1);
+		(*f)(i, s + i);
 }
